@@ -24,7 +24,7 @@ int main() {
 	ssize_t result = write(STDOUT_FILENO, message, strlen(message));
 	ssize_t resultRead = read(STDIN_FILENO, fileName, LENGTH_FILE_NAME);
 	fileName[resultRead - 1] = '\0';
-	int resultOpen = open(fileName, O_CREAT | O_WRONLY | O_TRUNC, 0666);
+	int resultOpen = open(fileName, O_CREAT | O_WRONLY | O_TRUNC);
 	if (resultOpen <= 0) {
 		ErrorMessage("An error with file: ");
 		exit(EXIT_FAILURE);
